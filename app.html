@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lexi Dictionary | IT 110 Midterm Project</title>
+  <meta name="description" content="Look up the meaning, pronunciation, and examples of any English word.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;0,700;1,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Lexi</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html">About the team</a>
+        <a href="app.html" aria-current="page">Dictionary</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- SEARCH -->
+    <section class="app-intro">
+      <div class="container">
+        <h1>Look up a <span class="marker">word</span></h1>
+
+        <form id="search-form" class="search-form" novalidate>
+          <label for="word-input">Word to define</label>
+          <input
+            type="text"
+            id="word-input"
+            name="word"
+            placeholder="Enter here"
+            autocomplete="off"
+            autofocus>
+          <button type="submit" id="search-btn" class="btn">Search</button>
+        </form>
+        <p class="hint">English words only. Press Enter or select Search.</p>
+      </div>
+    </section>
+
+    <!-- STATUS + RESULTS (JavaScript fills these in) -->
+    <section id="results">
+      <div class="container">
+
+        <!-- Loading, empty, and error messages go here.
+             aria-live makes screen readers announce changes.
+             In JS: statusEl.className = "message error"; statusEl.textContent = "...";
+             Hide it again by setting statusEl.hidden = true. -->
+        <p id="status" class="message" aria-live="polite">
+          Type a word above to see its meaning.
+        </p>
+
+        <!-- Your script.js should build one .entry per result inside this div:
+
+             <article class="entry">
+               <h2 class="entry-word">word</h2>
+               <p class="entry-phonetic">/phonetic/ <button class="audio-btn">Play audio</button></p>
+               <h3 class="part-of-speech">noun</h3>
+               <ol class="definitions">
+                 <li>Definition text <span class="example">Example sentence.</span></li>
+               </ol>
+               <p class="synonyms">Synonyms: a, b, c</p>
+             </article>
+        -->
+        <div id="result-container"></div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Data from the <a href="https://dictionaryapi.dev" target="_blank" rel="noopener">Free Dictionary API</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

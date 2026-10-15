@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Lexi | IT 110 Midterm Project</title>
+  <meta name="description" content="Portfolio of Team Lexi and our Dictionary web app.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;0,700;1,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Lexi</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="#project">Project</a>
+        <a href="#team">Team</a>
+        <a href="app.html">Open the app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- TEAM TITLE + INTRODUCTION -->
+    <section class="hero">
+      <div class="container">
+        <h1>We are <span class="marker">Team Lexi</span></h1>
+        <p>
+          <!-- TODO: replace with your own intro (2-3 sentences) -->
+          We are three BSIT students from Caraga State University who built a
+          dictionary web app for IT 110. This page introduces our team and the
+          project.
+        </p>
+        <a class="btn btn-large" href="app.html">Try the dictionary</a>
+      </div>
+    </section>
+
+    <!-- PROJECT DESCRIPTION -->
+    <section id="project">
+      <div class="container">
+        <h2>Our project</h2>
+        <div class="project-card">
+          <p>
+            <!-- TODO: describe the main goal in your own words -->
+            Lexi is a single-page dictionary application. Type any English
+            word and get its meanings, pronunciation, example sentences, and
+            synonyms.
+          </p>
+          <dl>
+            <dt>Application</dt>
+            <dd>Dictionary App</dd>
+            <dt>API</dt>
+            <dd>
+              <a href="https://dictionaryapi.dev" target="_blank" rel="noopener">Free Dictionary API</a>
+            </dd>
+            <dt>Built with</dt>
+            <dd>HTML, CSS, JavaScript (fetch and async/await)</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDIVIDUAL PROFILES -->
+    <section id="team">
+      <div class="container">
+        <h2>Meet the team</h2>
+        <div class="team-grid">
+
+          <article class="profile">
+            <!-- TODO: put each photo in the images/ folder -->
+            <img src="images/member1.jpg" alt="Photo of Member One" width="400" height="400">
+            <div class="profile-body">
+              <h3>Member One</h3>
+              <p class="profile-role">HTML structure and portfolio page</p>
+              <p class="profile-bio">Short bio here: course, year, one interest, and what you contributed.</p>
+            </div>
+          </article>
+
+          <article class="profile">
+            <img src="images/member2.jpg" alt="Photo of Member Two" width="400" height="400">
+            <div class="profile-body">
+              <h3>Member Two</h3>
+              <p class="profile-role">CSS styling and layout</p>
+              <p class="profile-bio">Short bio here: course, year, one interest, and what you contributed.</p>
+            </div>
+          </article>
+
+          <article class="profile">
+            <img src="images/member3.jpg" alt="Photo of Member Three" width="400" height="400">
+            <div class="profile-body">
+              <h3>Member Three</h3>
+              <p class="profile-role">JavaScript and API integration</p>
+              <p class="profile-bio">Short bio here: course, year, one interest, and what you contributed.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMINENT LINK TO THE APP (required by the rubric) -->
+    <section>
+      <div class="container">
+        <div class="cta">
+          <h2>Ready to look something up?</h2>
+          <p>Open the app and search for any English word.</p>
+          <a class="btn btn-large" href="app.html">Open the dictionary</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>IT 110 Midterm Project &middot; Caraga State University, College of Computing and Information Sciences</p>
+  </footer>
+
+</body>
+</html>
