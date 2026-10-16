@@ -1,0 +1,376 @@
+/*
+   LEXI - Dictionary App | IT 110 Midterm Project
+   Shared by index.html (portfolio) and app.html (app)
+   Sections: 1 Tokens  2 Base  3 Layout  4 Header/Footer
+             5 Buttons  6 Portfolio page  7 App page
+             8 Result entry  9 Messages  10 Responsive
+  */
+
+/* 1. Custom variables -------------*/
+:root {     /*Pseudo-class selector*/
+  --paper: #f4f6fb;
+  --surface: #ffffff;
+  --ink: #14213d;
+  --ink-soft: #4a5671;  
+  --line: #d5dbe8;
+  --cobalt: #2b4eff;
+  --cobalt-dark: #1a35c9;
+  --marker: #ffd84d;
+  --error-bg: #fdecec;
+  --error-ink: #9b1c1c;
+
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-body: "Public Sans", "Segoe UI", Arial, sans-serif;
+
+  --radius: 6px;
+  --content-width: 960px;
+}
+
+/* 2. BASE -------------------------------------------------- */
+*,
+*::before,  
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 600; }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.25rem); font-weight: 600; }
+h3 { font-size: 1.35rem; font-weight: 600; }
+
+p { margin: 0 0 1em; max-width: 65ch; }
+
+a { color: var(--cobalt); }
+
+img { max-width: 100%; display: block; }
+
+:focus-visible {
+  outline: 3px solid var(--cobalt);
+  outline-offset: 3px;
+}
+
+/* 3. LAYOUT ------------------------------------------------ */
+.container {
+  width: min(100% - 2rem, var(--content-width));
+  margin-inline: auto;
+}
+
+section {
+  padding-block: 3.5rem;
+}
+
+/* 4. HEADER / FOOTER --------------------------------------- */
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.9rem;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.site-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--marker);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 4px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-block: 1.5rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* 5. BUTTONS ----------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--cobalt);
+  border: 0;
+  border-radius: var(--radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn:hover { background: var(--cobalt-dark); }
+
+.btn-large {
+  padding: 1rem 2.2rem;
+  font-size: 1.15rem;
+}
+
+/* 6. PORTFOLIO PAGE (index.html) --------------------------- */
+.hero {
+  padding-block: 5rem 3rem;
+}
+
+/* The highlighter swipe: the one memorable element */
+.marker {
+  background: linear-gradient(transparent 58%, var(--marker) 58%, var(--marker) 92%, transparent 92%);
+  padding-inline: 0.1em;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--ink-soft);
+}
+
+.project-card {
+  background: var(--surface);
+  border-left: 6px solid var(--cobalt);
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius);
+}
+
+.project-card dl {
+  margin: 1rem 0 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.4rem 1.25rem;
+}
+
+.project-card dt { font-weight: 600; }
+.project-card dd { margin: 0; color: var(--ink-soft); }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.profile {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.profile img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: var(--line); /* shows while the photo is missing */
+}
+
+.profile-body { padding: 1rem 1.25rem 1.4rem; }
+
+.profile-role {
+  margin: 0 0 0.6rem;
+  font-weight: 600;
+  color: var(--cobalt);
+}
+
+.profile-bio {
+  margin: 0;
+  font-size: 0.97rem;
+  color: var(--ink-soft);
+}
+
+.cta {
+  text-align: center;
+  background: var(--ink);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 3rem 1.5rem;
+}
+
+.cta p {
+  margin-inline: auto;
+  color: #cdd5ea;
+}
+
+.cta .btn { background: var(--marker); color: var(--ink); }
+.cta .btn:hover { background: #ffe785; }
+
+/* 7. APP PAGE (app.html) ----------------------------------- */
+.app-intro { padding-block: 3rem 1rem; }
+
+.search-form {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.search-form label {
+  position: absolute; /* visually hidden but readable by screen readers */
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.search-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  font: inherit;
+  font-size: 1.15rem;
+  color: var(--ink);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.search-form input:focus {
+  border-color: var(--cobalt);
+  outline: none;
+}
+
+.hint {
+  margin-top: 0.75rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+#results { padding-block: 1rem 4rem; }
+
+/* 8. RESULT ENTRY (your JavaScript will create these) ------ */
+.entry {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.entry-word {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1;
+  margin: 0 0 0.25rem;
+}
+
+.entry-phonetic {
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+}
+
+.audio-btn {
+  margin-left: 0.75rem;
+  padding: 0.3rem 0.8rem;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--cobalt);
+  background: transparent;
+  border: 2px solid var(--cobalt);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.audio-btn:hover { background: var(--cobalt); color: #fff; }
+
+.part-of-speech {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  margin: 1.5rem 0 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.definitions {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.definitions li { margin-bottom: 0.75rem; }
+
+.example {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.synonyms {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+/* 9. MESSAGES (loading / empty / error) -------------------- */
+.message {
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  color: var(--ink-soft);
+}
+
+.message.error {
+  background: var(--error-bg);
+  border: 1px solid #f1b8b8;
+  color: var(--error-ink);
+  font-weight: 500;
+}
+
+/* 10. RESPONSIVE ------------------------------------------- */
+@media (max-width: 760px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .hero { padding-block: 3rem 2rem; }
+  section { padding-block: 2.5rem; }
+  .entry { padding: 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  .search-form { flex-direction: column; }
+  .site-header .container { flex-direction: column; align-items: flex-start; }
+  .project-card dl { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
